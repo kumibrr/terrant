@@ -25,7 +25,6 @@
 	}
 	.desktop {
 		position: absolute;
-		margin: 10px;
 		width: 100%;
 		height: 95%;
 		z-index: -1;
