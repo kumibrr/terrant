@@ -20,7 +20,7 @@
 		</div>
 		<div class="window-body">
 			<img src={keyLogin} alt="" />
-			<form action="">
+			<form on:submit|preventDefault={login}>
 				<div>
 					<div>
 						<label for="username">Username:</label>
@@ -33,7 +33,7 @@
 				</div>
 
 				<div class="submit">
-					<input type="submit" value="Submit" on:click={login} />
+					<input type="submit" value="Submit" />
 					<input type="submit" value="Register" />
 				</div>
 			</form>
@@ -50,7 +50,7 @@
 </div>
 
 <style>
-	@import '98.css/dist/98.css';
+	/* @import '98.css/dist/98.css'; */
 	img {
 		height: 50px;
 		width: 50px;
