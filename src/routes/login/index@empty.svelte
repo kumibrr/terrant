@@ -9,7 +9,7 @@
 	import LinkIcon from '$lib/link-icon.svelte';
 
 	const login = () => {
-		goto('/home', { replaceState: true });
+		goto('/', { replaceState: true });
 	};
 </script>
 
