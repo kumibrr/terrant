@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import github from '$lib/assets/github.png';
 	import google from '$lib/assets/google.png';
 	import microsoft from '$lib/assets/microsoft.png';
@@ -6,6 +7,10 @@
 	import facebook from '$lib/assets/facebook.png';
 	import keyLogin from '$lib/assets/key-login.png';
 	import LinkIcon from '$lib/link-icon.svelte';
+
+	const login = () => {
+		goto('/home', { replaceState: true });
+	};
 </script>
 
 <div class="container">
@@ -28,7 +33,7 @@
 				</div>
 
 				<div class="submit">
-					<input type="submit" value="Submit" />
+					<input type="submit" value="Submit" on:click={login} />
 					<input type="submit" value="Register" />
 				</div>
 			</form>

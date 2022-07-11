@@ -1,3 +1,3 @@
-<style>
-  @import '98.css/dist/98.css';
-</style>
+<script>
+	console.log('ey');
+</script>
