@@ -51,6 +51,7 @@
 		display: flex;
 		align-items: center;
 		padding: 2px;
+		font-weight: bold;
 	}
 
 	div.toolbox {
