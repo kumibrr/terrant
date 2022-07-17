@@ -16,10 +16,10 @@
 <div class="container">
 	<div class="window">
 		<div class="title-bar">
-			<div class="title-bar-text">Welcome to Miduows</div>
+			<div class="title-bar-text"><p>Welcome to Miduows</p></div>
 		</div>
 		<div class="window-body">
-			<img src={keyLogin} alt="" />
+			<img src={keyLogin} alt="Login to Miduows" draggable="false" />
 			<form on:submit|preventDefault={login}>
 				<div>
 					<div>
@@ -38,7 +38,7 @@
 				</div>
 			</form>
 		</div>
-		<div class="window-body">Or sign in with...</div>
+		<div class="window-body"><p>Or sign in with...</p></div>
 		<div class="window-body">
 			<LinkIcon icon={github} name="github" onclick={() => {}} />
 			<LinkIcon icon={microsoft} name="microsoft" onclick={() => {}} />
@@ -50,7 +50,6 @@
 </div>
 
 <style>
-	/* @import '98.css/dist/98.css'; */
 	img {
 		height: 50px;
 		width: 50px;
@@ -84,5 +83,11 @@
 		margin-left: 10px;
 		max-height: 21px;
 		max-width: 80px;
+	}
+
+	label,
+	p {
+		margin: 0;
+		user-select: none;
 	}
 </style>

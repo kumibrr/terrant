@@ -5,8 +5,8 @@
 	export let href: string;
 </script>
 
-<a {href} target="_blank" rel="noopener noreferrer">
-	<img src={icon} alt={iconAlt} />
+<a {href} target="_blank" rel="noopener noreferrer" draggable="false">
+	<img src={icon} alt={iconAlt} draggable="false" />
 	<p>{name}</p>
 </a>
 
@@ -29,6 +29,7 @@
 	}
 	p {
 		margin: 0;
+		margin-top: 5px;
 		font-size: 13px;
 	}
 </style>

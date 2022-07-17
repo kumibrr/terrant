@@ -16,11 +16,12 @@
 	<div>
 		<button
 			class="start"
+			class:active={showMenu}
 			on:click={() => {
 				showMenu = !showMenu;
 			}}
 		>
-			<img src={midu} alt="midu logo" />
+			<img src={midu} alt="midu logo" draggable="false" />
 			Start
 		</button>
 	</div>
@@ -46,12 +47,16 @@
 			inset 2px 2px #dfdfdf;
 	}
 
-	button.start,
-	button.start:active {
+	button.start {
 		display: flex;
 		align-items: center;
 		padding: 2px;
 		font-weight: bold;
+	}
+
+	.active {
+		box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf,
+			inset 2px 2px grey;
 	}
 
 	div.toolbox {

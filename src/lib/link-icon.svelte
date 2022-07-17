@@ -5,7 +5,7 @@
 </script>
 
 <button title={name} on:click={onclick()}>
-	<img src={icon} alt={`${name} logo`} />
+	<img src={icon} alt={`${name} logo`} draggable="false" />
 </button>
 
 <style>

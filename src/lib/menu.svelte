@@ -11,11 +11,11 @@
 		<li />
 		<li />
 		<li>
-			<img src={antenna} alt="Connect to chat" />
+			<img src={antenna} alt="Connect to chat" draggable="false" />
 			Connect to chat
 		</li>
 		<li>
-			<img src={logout} alt="Log Out" />
+			<img src={logout} alt="Log Out" draggable="false" />
 			Log Out
 		</li>
 	</ul>
@@ -28,6 +28,7 @@
 		background: silver;
 		box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey,
 			inset 2px 2px #dfdfdf;
+		user-select: none;
 	}
 
 	span {
