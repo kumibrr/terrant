@@ -4,7 +4,7 @@
 </script>
 
 <div>
-	<span><h3>Miudouws</h3></span>
+	<span><h3>Miduows</h3></span>
 	<ul>
 		<li />
 		<li />
