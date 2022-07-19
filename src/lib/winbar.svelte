@@ -3,6 +3,7 @@
 	import Time from './time.svelte';
 	import Menu from './menu.svelte';
 	import { slide } from 'svelte/transition';
+	import { processes } from '$lib/stores/processStore';
 
 	let showMenu = false;
 </script>
@@ -13,7 +14,7 @@
 	</div>
 {/if}
 <footer>
-	<div>
+	<div class="button-bar">
 		<button
 			class="start"
 			class:active={showMenu}
@@ -24,12 +25,17 @@
 			<img src={midu} alt="midu logo" draggable="false" />
 			Start
 		</button>
+
+		{#each $processes as { icon, name }}
+			<button class="process">
+				<img src={icon} alt="process logo" draggable="false" />
+				<p>{name}</p>
+			</button>
+		{/each}
 	</div>
 
-	<div>
-		<div class="toolbox">
-			<Time />
-		</div>
+	<div class="toolbox">
+		<Time />
 	</div>
 </footer>
 
@@ -47,19 +53,34 @@
 			inset 2px 2px #dfdfdf;
 	}
 
-	button.start {
+	button {
 		display: flex;
 		align-items: center;
-		padding: 2px;
-		font-weight: bold;
+		padding: 0;
+		margin-right: 5px;
 	}
 
+	button:active,
 	.active {
 		box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf,
 			inset 2px 2px grey;
+		padding: 2px !important;
 	}
 
-	div.toolbox {
+	button.start {
+		font-weight: bold;
+	}
+
+	button.process {
+		min-width: 150px;
+		max-width: 150px;
+	}
+
+	.button-bar {
+		display: flex;
+	}
+
+	.toolbox {
 		display: flex;
 		align-items: center;
 		flex-direction: row-reverse;
@@ -81,5 +102,12 @@
 	.menu-bar {
 		position: absolute;
 		bottom: 32px;
+	}
+
+	p {
+		margin: 0;
+		padding-left: 2px;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 </style>
