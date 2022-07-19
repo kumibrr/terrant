@@ -1,13 +1,15 @@
 import type { Process } from '$lib/types/process';
 import { writable } from 'svelte/store';
 import Chat from '$lib/chat.svelte';
+import antenna from '$lib/assets/antenna.png';
 
 const createProcesses = () => {
 	const { subscribe, update } = writable<Process[]>([
 		{
 			component: Chat,
 			name: 'chat',
-			state: 'expanded'
+			state: 'expanded',
+			icon: antenna
 		}
 	]);
 

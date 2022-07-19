@@ -5,4 +5,5 @@ export type Process = {
 	order?: number;
 	state: 'open' | 'minimized' | 'expanded';
 	component: ComponentType;
+	icon: string;
 };
