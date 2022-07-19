@@ -7,7 +7,6 @@ const createProcesses = () => {
 		{
 			component: Chat,
 			name: 'chat',
-			position: { x: 0, y: 0 },
 			state: 'expanded'
 		}
 	]);
