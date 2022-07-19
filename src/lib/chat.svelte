@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Window from './window.svelte';
+	import wordart from '$lib/assets/wordart.png';
 	export let name: string;
 	export let icon: string;
 </script>
@@ -7,9 +8,7 @@
 <Window {icon} {name} backgroundColor="orange">
 	<div class="root">
 		<header>
-			//! TODO: Add wordart instead of text
-			<h1>chat</h1>
-			<h2>de terran't</h2>
+			<img src={wordart} alt="Chat de terran't" />
 			<div class="actions">
 				<button><p>Create chat room</p></button>
 				<button><p>Join chat room</p></button>
@@ -18,12 +17,15 @@
 		<div class="body">
 			<p>Current room:</p>
 			<div />
-			<!-- <input type="text" /> -->
+			<input type="text" />
 		</div>
 	</div>
 </Window>
 
 <style>
+	img {
+		max-width: 300px;
+	}
 	div.actions button {
 		background-color: yellow;
 		color: rgb(22, 203, 239);
