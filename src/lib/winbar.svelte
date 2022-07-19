@@ -64,7 +64,7 @@
 	.active {
 		box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf,
 			inset 2px 2px grey;
-		padding: 2px !important;
+		padding: 1px !important;
 	}
 
 	button.start {
