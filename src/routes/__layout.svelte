@@ -17,12 +17,6 @@
 <Winbar />
 
 <style>
-	:root {
-		background-color: #018281;
-	}
-	:global(body) {
-		margin: 0;
-	}
 	.desktop {
 		position: absolute;
 		width: 100%;
