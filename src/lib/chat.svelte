@@ -45,16 +45,6 @@
 	p {
 		margin: 0;
 	}
-	h1,
-	h2 {
-		font-family: 'Courier New', Courier, monospace;
-		background-color: rgb(64, 64, 239);
-		color: rgb(22, 203, 239);
-		margin: 0;
-	}
-	h2 {
-		padding-left: 40px;
-	}
 	.body {
 		border: 2px solid black;
 		margin-top: 10px;
