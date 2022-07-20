@@ -42,8 +42,6 @@
 		<div class="window-body">
 			<LinkIcon icon={github} name="github" onclick={() => {}} />
 			<LinkIcon icon={microsoft} name="microsoft" onclick={() => {}} />
-			<LinkIcon icon={facebook} name="facebook" onclick={() => {}} />
-			<LinkIcon icon={twitter} name="twitter" onclick={() => {}} />
 			<LinkIcon icon={google} name="google" onclick={() => {}} />
 		</div>
 	</div>
