@@ -36,6 +36,7 @@
 		min-height: 500px;
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
 	}
 	.title-bar-icon {
 		max-height: 12px;
@@ -44,6 +45,8 @@
 		cursor: move;
 	}
 	.window-body {
+		display: flex;
 		flex: 1;
+		overflow: hidden;
 	}
 </style>

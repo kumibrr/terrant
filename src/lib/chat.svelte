@@ -17,7 +17,7 @@
 		<div class="body">
 			<p>Current room:</p>
 			<div />
-			<input type="text" />
+			<input type="text" placeholder="message" />
 		</div>
 	</div>
 </Window>
@@ -63,14 +63,28 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1;
+		overflow: hidden;
+	}
+	.body > p {
+		background-color: yellow;
 	}
 	.body div {
 		background-color: white;
 		flex: 1;
+		overflow-wrap: anywhere;
+		overflow-y: scroll;
+	}
+	.body div p {
+		margin-bottom: 5px;
 	}
 	.root {
 		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
+	}
+
+	input {
+		height: 21px;
+		bottom: 0;
 	}
 </style>
