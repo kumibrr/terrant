@@ -1,15 +1,26 @@
-<script>
-	import { goto } from '$app/navigation';
+<script type="ts">
+	import { supabase } from '$lib/services/supabase';
 	import github from '$lib/assets/github.png';
 	import google from '$lib/assets/google.png';
 	import microsoft from '$lib/assets/microsoft.png';
-	import twitter from '$lib/assets/twitter.png';
-	import facebook from '$lib/assets/facebook.png';
 	import keyLogin from '$lib/assets/key-login.png';
 	import LinkIcon from '$lib/link-icon.svelte';
 
-	const login = () => {
-		goto('/', { replaceState: true });
+	let email: string;
+	let password: string;
+
+	const login = async () => {
+		const { user, error } = await supabase.auth.signIn({ email, password });
+		console.log({ user, error });
+	};
+
+	const signup = async () => {
+		const { user, error } = await supabase.auth.signUp({ email, password });
+		console.log({ user, error });
+	};
+
+	const loginWithProvider = async (provider: 'google' | 'azure' | 'github') => {
+		const { user, error } = await supabase.auth.signIn({ provider });
 	};
 </script>
 
@@ -20,29 +31,29 @@
 		</div>
 		<div class="window-body">
 			<img src={keyLogin} alt="Login to Miduows" draggable="false" />
-			<form on:submit|preventDefault={login}>
+			<form on:submit|preventDefault>
 				<div>
-					<div>
-						<label for="username">Username:</label>
-						<input type="text" name="" id="" />
+					<div class="field">
+						<label for="username">E-mail:</label>
+						<input type="email" bind:value={email} />
 					</div>
-					<div>
+					<div class="field">
 						<label for="password">Password:</label>
-						<input type="password" name="" id="" />
+						<input type="password" bind:value={password} />
 					</div>
 				</div>
 
 				<div class="submit">
-					<input type="submit" value="Submit" />
-					<input type="submit" value="Register" />
+					<button on:click={login}>Login</button>
+					<button on:click={signup}>Sign Up</button>
 				</div>
 			</form>
 		</div>
 		<div class="window-body"><p>Or sign in with...</p></div>
 		<div class="window-body">
-			<LinkIcon icon={github} name="github" onclick={() => {}} />
-			<LinkIcon icon={microsoft} name="microsoft" onclick={() => {}} />
-			<LinkIcon icon={google} name="google" onclick={() => {}} />
+			<LinkIcon icon={github} name="github" onclick={() => loginWithProvider('github')} />
+			<LinkIcon icon={microsoft} name="microsoft" onclick={() => loginWithProvider('azure')} />
+			<LinkIcon icon={google} name="google" onclick={() => loginWithProvider('google')} />
 		</div>
 	</div>
 </div>
@@ -73,9 +84,15 @@
 		margin-left: 10px;
 		display: flex;
 	}
-	form div > input {
+	form div > input,
+	form div > button {
 		margin-bottom: 8px;
 		height: 23px;
+	}
+	form .field {
+		display: flex;
+		justify-content: end;
+		align-items: baseline;
 	}
 	.submit {
 		margin-left: 10px;
